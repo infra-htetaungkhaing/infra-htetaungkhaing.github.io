@@ -19,6 +19,16 @@ function Navbar({ nav, name, profile }) {
     }
   }, [open])
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.matchMedia('(min-width: 960px)').matches) {
+        setOpen(false)
+      }
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
@@ -46,6 +56,7 @@ function Navbar({ nav, name, profile }) {
           type="button"
           className="navbar__toggle"
           aria-expanded={open}
+          aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((value) => !value)}
         >
@@ -53,7 +64,12 @@ function Navbar({ nav, name, profile }) {
         </button>
       </div>
 
-      <div className={`navbar__drawer ${open ? 'is-open' : ''}`}>
+      <nav
+        id="mobile-nav"
+        className={`navbar__drawer ${open ? 'is-open' : ''}`}
+        aria-label="Mobile"
+        hidden={!open}
+      >
         {nav.map((item) => (
           <a
             key={item.id}
@@ -63,7 +79,7 @@ function Navbar({ nav, name, profile }) {
             {item.label}
           </a>
         ))}
-      </div>
+      </nav>
     </header>
   )
 }
