@@ -1,0 +1,295 @@
+{
+  "site": {
+    "title": "Htet Aung Khaing | Network Engineer",
+    "description": "Network Engineer portfolio — enterprise LAN/WAN/WLAN infrastructure, routing, switching, and security.",
+    "baseUrl": "/"
+  },
+  "nav": [
+    { "id": "about", "label": "About" },
+    { "id": "experience", "label": "Experience" },
+    { "id": "expertise", "label": "Expertise" },
+    { "id": "achievements", "label": "Achievements" },
+    { "id": "certifications", "label": "Certifications" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "hero": {
+    "eyebrow": "Network Infrastructure · Yangon",
+    "name": "Htet Aung Khaing",
+    "role": "Network Engineer",
+    "tagline": "Designing, securing, and keeping enterprise networks online — from core routing to branch connectivity.",
+    "statusLabel": "System Status",
+    "statusValue": "Operational",
+    "ctaPrimary": {
+      "label": "View Experience",
+      "href": "#experience"
+    },
+    "ctaSecondary": {
+      "label": "Download Resume",
+      "href": "/assets/Htet_Aung_Khaing_Resume.pdf"
+    },
+    "metrics": [
+      { "value": "CCNA", "label": "Cisco Certified" },
+      { "value": "CCNP", "label": "In Progress" },
+      { "value": "5+", "label": "Vendor Platforms" },
+      { "value": "24/7", "label": "Uptime Focus" }
+    ]
+  },
+  "profile": {
+    "image": "/assets/profile.jpg",
+    "alt": "Htet Aung Khaing professional portrait"
+  },
+  "about": {
+    "eyebrow": "Career Objective",
+    "title": "Building reliable enterprise network fabric",
+    "summary": "To obtain a challenging Network Engineer position where I can utilize my expertise in routing, switching, and network security to design, implement, and maintain reliable enterprise network infrastructures. With hands-on experience in LAN/WAN/WLAN technologies, multi-vendor networking platforms, and proactive network monitoring, I aim to enhance network performance, ensure system reliability, and contribute to the development of secure and scalable IT environments while continuously expanding my technical expertise.",
+    "highlights": [
+      "LAN / WAN / WLAN architecture & deployment",
+      "Multi-vendor routing & switching (Cisco, MikroTik, Ruijie, UniFi, Omada)",
+      "Network security, segmentation & QoS",
+      "Proactive monitoring & incident resolution"
+    ]
+  },
+  "experience": {
+    "eyebrow": "Work History",
+    "title": "Hands-on infrastructure roles",
+    "jobs": [
+      {
+        "id": "ninjavan",
+        "company": "Ninja Van Myanmar",
+        "role": "IT Officer · Network Engineer",
+        "period": "Dec 2024 – Present",
+        "location": "Myanmar",
+        "responsibilities": [
+          "Designed and implemented scalable LAN/WAN/WLAN infrastructures for enterprise environments to support reliable, high-performance connectivity.",
+          "Implemented VLAN segmentation and Quality of Service (QoS) policies to enhance traffic management, efficiency, and service reliability.",
+          "Monitored network traffic and system performance using monitoring tools to identify security risks and optimize operations.",
+          "Maintained and supported call center network infrastructure, ensuring zero downtime and uninterrupted communication services.",
+          "Managed network connectivity across branches and stations for stable inter-branch communication and operational continuity.",
+          "Diagnosed and resolved routing, switching, and connectivity issues to minimize service disruptions.",
+          "Maintained network documentation including topology diagrams, configurations, and operational procedures.",
+          "Configured and optimized routing and switching protocols for efficient data communication.",
+          "Applied network security best practices including firewall rules, access control policies, and segmentation."
+        ]
+      },
+      {
+        "id": "arao",
+        "company": "Arao Company Limited",
+        "role": "IT Support",
+        "period": "Sep 2023 – Dec 2024",
+        "location": "Myanmar",
+        "responsibilities": [
+          "Installed and configured computer hardware, operating systems, and business software for reliable workstation performance.",
+          "Deployed and configured routers, switches, and wireless access points on Cisco, MikroTik, Ruijie, and TP-Link Omada platforms.",
+          "Configured Microsoft Outlook including account setup, data migration, and backup management.",
+          "Performed Windows installation, configuration, and system updates for stable workstation environments.",
+          "Installed and maintained biometric fingerprint systems (BioStar) for secure access control and attendance.",
+          "Implemented and configured CCTV surveillance systems for physical security monitoring.",
+          "Installed and supported peripheral devices including scanners, printers, and office equipment."
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "Technical Stack",
+    "title": "Hardware, protocols & platforms",
+    "categories": [
+      {
+        "title": "Routing & Network Protocols",
+        "icon": "routing",
+        "items": [
+          "OSPF, BGP, RIP, EIGRP",
+          "MPLS Networking",
+          "Static & Dynamic Routing",
+          "Route Redistribution & Traffic Engineering"
+        ]
+      },
+      {
+        "title": "Switching & Layer 2",
+        "icon": "switching",
+        "items": [
+          "VLAN & Inter-VLAN Routing",
+          "Trunking (802.1Q)",
+          "STP / RSTP / MSTP",
+          "Link Aggregation / EtherChannel",
+          "Switching Infrastructure Design"
+        ]
+      },
+      {
+        "title": "Network Hardware & Platforms",
+        "icon": "hardware",
+        "items": [
+          "Routers, Switches, Firewalls",
+          "Wireless Access Points & Controllers",
+          "Cisco",
+          "MikroTik",
+          "Ruijie",
+          "UniFi",
+          "TP-Link Omada"
+        ]
+      },
+      {
+        "title": "Infrastructure & Connectivity",
+        "icon": "infra",
+        "items": [
+          "LAN / WAN / WLAN Architecture",
+          "Enterprise Network Deployment",
+          "Branch Network Connectivity",
+          "Structured Cabling & Topology Design"
+        ]
+      },
+      {
+        "title": "Monitoring & Troubleshooting",
+        "icon": "monitor",
+        "items": [
+          "Wireshark (Packet Analysis)",
+          "Cisco Packet Tracer",
+          "PuTTY / SSH Remote Access",
+          "Network Performance Monitoring"
+        ]
+      },
+      {
+        "title": "Network Security",
+        "icon": "security",
+        "items": [
+          "Firewall Configuration & Policy Management",
+          "Network Access Control (NAC)",
+          "Intrusion Detection & Threat Monitoring",
+          "Secure Network Communication"
+        ]
+      },
+      {
+        "title": "Operational Skills",
+        "icon": "ops",
+        "items": [
+          "Network Troubleshooting & Incident Resolution",
+          "Network Documentation & Topology Mapping",
+          "Cable Management & Infrastructure Organization",
+          "System Configuration & Maintenance"
+        ]
+      }
+    ]
+  },
+  "softSkills": {
+    "eyebrow": "Soft Skills",
+    "title": "How I operate under load",
+    "items": [
+      "Analytical & Critical Thinking",
+      "Advanced Troubleshooting",
+      "Incident Prioritization & Time Management",
+      "Strong Communication Skills",
+      "Team Collaboration",
+      "Problem-Solving Under Pressure",
+      "Attention to Detail",
+      "Adaptability"
+    ]
+  },
+  "achievements": {
+    "eyebrow": "Key Achievements",
+    "title": "Impact on uptime & efficiency",
+    "items": [
+      {
+        "title": "Network Downtime Reduction",
+        "description": "Improved network stability by quickly identifying and resolving critical network issues, minimizing service disruptions."
+      },
+      {
+        "title": "Network Performance Optimization",
+        "description": "Enhanced overall network efficiency by optimizing configurations and improving bandwidth utilization."
+      },
+      {
+        "title": "Operational Process Improvement",
+        "description": "Streamlined network operations by implementing better configuration management and maintenance practices."
+      },
+      {
+        "title": "Infrastructure Reliability",
+        "description": "Strengthened network reliability through proactive monitoring and timely troubleshooting of connectivity issues."
+      },
+      {
+        "title": "Service Continuity Support",
+        "description": "Maintained stable network services to support business operations and ensure uninterrupted connectivity."
+      },
+      {
+        "title": "Technical Documentation",
+        "description": "Maintained detailed network documentation including configurations, topology diagrams, and operational procedures; shared knowledge to support efficient maintenance."
+      }
+    ]
+  },
+  "certifications": {
+    "eyebrow": "Credentials",
+    "title": "Certifications & education",
+    "items": [
+      {
+        "name": "Cisco Certified Network Associate (CCNA)",
+        "issuer": "Cisco Systems",
+        "status": "Completed"
+      },
+      {
+        "name": "Cisco Certified Network Professional (CCNP)",
+        "issuer": "Cisco Systems",
+        "status": "In Progress"
+      },
+      {
+        "name": "MikroTik Certified Network Associate (MTCNA)",
+        "issuer": "MikroTik",
+        "status": "Completed"
+      },
+      {
+        "name": "Ruijie Certified Engineer",
+        "issuer": "Ruijie Networks",
+        "status": "Completed"
+      },
+      {
+        "name": "CompTIA A+",
+        "issuer": "CompTIA",
+        "status": "Completed"
+      }
+    ],
+    "education": {
+      "degree": "Bachelor of Science (B.Sc.) in Geology",
+      "school": "Pyay University, Myanmar",
+      "period": "2016 – 2019"
+    },
+    "languages": ["English"],
+    "noticePeriod": "One Month"
+  },
+  "contact": {
+    "eyebrow": "Connect",
+    "title": "Ready for the next network challenge",
+    "subtitle": "Open to Network Engineer roles. Reach out via WhatsApp, email, LinkedIn, or download the full resume.",
+    "channels": [
+      {
+        "type": "phone",
+        "label": "WhatsApp",
+        "value": "+95 9 984 472 801",
+        "href": "https://wa.me/959984472801"
+      },
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "htetaungkhaingit777@gmail.com",
+        "href": "mailto:htetaungkhaingit777@gmail.com"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/htet-aung-khaing",
+        "href": "https://www.linkedin.com/in/htet-aung-khaing-936363351?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      },
+      {
+        "type": "location",
+        "label": "Location",
+        "value": "9 Ward, Tharkayta, Yangon",
+        "href": null
+      },
+      {
+        "type": "resume",
+        "label": "Resume",
+        "value": "Download PDF",
+        "href": "/assets/Htet_Aung_Khaing_Resume.pdf"
+      }
+    ]
+  },
+  "footer": {
+    "copyrightName": "Htet Aung Khaing",
+    "tagline": "Network Engineer · Infrastructure Reliability"
+  }
+}
