@@ -56,21 +56,16 @@ npx gh-pages -d dist
 
 ### Step 7 — Turn on GitHub Pages
 
-**Required (GitHub Actions):**
+**Required Pages setting (fixes white screen):**
 
 1. Repository → **Settings** → **Pages**
-2. Under **Build and deployment → Source**, choose **GitHub Actions** (not “Deploy from a branch”)
-3. Save
-4. Open **Actions → Deploy Portfolio → Run workflow**
-
-If Source is set to **Deploy from a branch** (for example `main`), GitHub publishes the raw React source. The browser then tries to load `/src/main.jsx`, which fails and the site shows a **white screen**. The Deploy Portfolio workflow builds `dist/` and must be the Pages source.
-
-**Alternative (gh-pages branch):**
-
-1. Repository → **Settings** → **Pages**
-2. Source: **Deploy from a branch**
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**
 3. Branch: **gh-pages** / folder **/(root)**
 4. Save
+
+The Deploy Portfolio workflow builds the site into `dist/` and publishes that build to the **`gh-pages`** branch.
+
+If Source points at **`main`**, GitHub publishes the raw React source. The browser then tries to load `/src/main.jsx`, which fails and the site shows a **white screen**.
 
 ### Step 8 — Open the site
 
