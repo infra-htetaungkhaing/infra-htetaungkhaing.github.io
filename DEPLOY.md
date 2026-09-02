@@ -48,17 +48,17 @@ Output folder: `dist/`
 npm install --save-dev gh-pages
 ```
 
-### Step 6 — Turn on GitHub Pages (GitHub Actions)
+### Step 6 — GitHub Pages (automatic)
 
-**Required one-time setting for this `*.github.io` user site:**
+Pushing to `main` is enough. The **Deploy Portfolio** workflow:
 
-1. Open [Pages settings](https://github.com/infra-htetaungkhaing/infra-htetaungkhaing.github.io/settings/pages)
-2. Under **Build and deployment → Source**, choose **GitHub Actions**
-3. Save
+1. Builds the Vite app into `dist/`
+2. Publishes those production files onto `main` (keeps `src/`, workflows, and config)
+3. GitHub Pages serves the updated site
 
-Do **not** use “Deploy from a branch” pointing at `main`. That publishes raw Vite source (`/src/main.jsx`) and the site stays on a white screen.
+No manual deploy command. Vite’s HTML entry for local development lives in `index.template.html` (`npm run dev` / `npm run build` copy it to `index.html`).
 
-After this setting, every push to `main` runs **Deploy Portfolio**, builds `dist/`, and updates the live site. No manual deploy command.
+Optional (repo admin only): Settings → Pages → Source → **GitHub Actions** is the cleaner long-term setup. Collaborators with push-only access cannot change that setting.
 
 ### Step 7 — Open the site
 

@@ -1,7 +1,9 @@
-# Auto-deploy on every push to main.
-# Required one-time setting (user/org *.github.io sites):
-#   Settings → Pages → Build and deployment → Source = GitHub Actions
-# After that, only `git push` is needed. No manual deploy.
+# Auto-deploy on every push to main (no manual deploy).
+#
+# This repo's Pages setting is currently "legacy" from branch main/root.
+# PlanetLT has push access but not admin, so Actions cannot switch Pages to
+# "GitHub Actions". Instead this workflow builds Vite and publishes the
+# production files onto main (keeping source files), which legacy Pages serves.
 name: Deploy Portfolio
 
 on:
@@ -10,9 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -20,9 +20,7 @@ concurrency:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,17 +35,32 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare Vite entry
+        run: cp index.template.html index.html
+
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Ensure .nojekyll exists
+        run: touch dist/.nojekyll
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish production files to main
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: dist
+          branch: main
+          clean: true
+          force: false
+          commit-message: 'Publish production build [skip ci]'
+          clean-exclude: |
+            src
+            public
+            .github
+            package.json
+            package-lock.json
+            vite.config.js
+            index.template.html
+            DEPLOY.md
+            README.md
+            .gitignore
+            .oxlintrc.json
