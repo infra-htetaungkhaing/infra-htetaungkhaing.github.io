@@ -48,26 +48,19 @@ Output folder: `dist/`
 npm install --save-dev gh-pages
 ```
 
-### Step 6 — Publish `dist` to the `gh-pages` branch
+### Step 6 — Turn on GitHub Pages (GitHub Actions)
 
-```bash
-npx gh-pages -d dist
-```
+**Required one-time setting for this `*.github.io` user site:**
 
-### Step 7 — Turn on GitHub Pages
+1. Open [Pages settings](https://github.com/infra-htetaungkhaing/infra-htetaungkhaing.github.io/settings/pages)
+2. Under **Build and deployment → Source**, choose **GitHub Actions**
+3. Save
 
-**Required Pages setting (fixes white screen):**
+Do **not** use “Deploy from a branch” pointing at `main`. That publishes raw Vite source (`/src/main.jsx`) and the site stays on a white screen.
 
-1. Repository → **Settings** → **Pages**
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**
-3. Branch: **gh-pages** / folder **/(root)**
-4. Save
+After this setting, every push to `main` runs **Deploy Portfolio**, builds `dist/`, and updates the live site. No manual deploy command.
 
-The Deploy Portfolio workflow builds the site into `dist/` and publishes that build to the **`gh-pages`** branch.
-
-If Source points at **`main`**, GitHub publishes the raw React source. The browser then tries to load `/src/main.jsx`, which fails and the site shows a **white screen**.
-
-### Step 8 — Open the site
+### Step 7 — Open the site
 
 ```text
 https://YOUR_USERNAME.github.io/
@@ -81,8 +74,7 @@ For a non-technical user who only edits content on GitHub:
 2. Click the pencil icon to edit.
 3. Change the needed fields (example: WhatsApp `"value"` and `"href"`).
 4. Click **Commit changes** to `main`.
-5. Open **Actions → Deploy Portfolio → Run workflow**.
-6. Wait for green **Success**, then hard-refresh the live site.
+5. Wait for **Actions → Deploy Portfolio** to show green **Success**, then hard-refresh the live site.
 
 Full walkthrough: see **Normal user update guide** in `README.md`.
 

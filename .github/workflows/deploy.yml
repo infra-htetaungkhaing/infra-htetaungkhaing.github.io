@@ -1,10 +1,7 @@
-# Builds the Vite app and publishes the production files to the gh-pages branch.
-# One-time repo setting required:
-#   Settings → Pages → Build and deployment → Source = "Deploy from a branch"
-#   Branch = gh-pages / (root)
-#
-# Do NOT point Pages at the main branch root — that publishes raw Vite source
-# (/src/main.jsx) and the live site stays on a white screen.
+# Auto-deploy on every push to main.
+# Required one-time setting (user/org *.github.io sites):
+#   Settings → Pages → Build and deployment → Source = GitHub Actions
+# After that, only `git push` is needed. No manual deploy.
 name: Deploy Portfolio
 
 on:
@@ -13,7 +10,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
@@ -21,6 +20,9 @@ concurrency:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,12 +40,14 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Ensure .nojekyll exists
-        run: touch dist/.nojekyll
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Publish to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
