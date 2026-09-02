@@ -1,4 +1,6 @@
 # Builds the Vite site and publishes it to GitHub Pages.
+# Important: Pages must use "GitHub Actions" as the source (not "Deploy from a branch"),
+# otherwise GitHub will publish the raw repo and the site goes white.
 name: Deploy Portfolio
 
 on:
@@ -37,8 +39,35 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Ensure Pages uses GitHub Actions
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo
+            try {
+              await github.rest.repos.updateInformationAboutPagesSite({
+                owner,
+                repo,
+                build_type: 'workflow',
+              })
+              core.info('Pages source set to GitHub Actions (workflow).')
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.repos.createPagesSite({
+                  owner,
+                  repo,
+                  build_type: 'workflow',
+                })
+                core.info('Pages enabled with GitHub Actions (workflow).')
+              } else {
+                throw error
+              }
+            }
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
